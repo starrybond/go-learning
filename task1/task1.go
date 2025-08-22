@@ -163,7 +163,20 @@ func merge(intervals [][]int) [][]int {
 }
 
 // 8.两数之和
-func twoSum(nums []int, target int) []int {
+// 暴力解法
+func twoSum1(nums []int, target int) []int {
+	for i, cnt := range nums {
+		for j, cnt2 := range nums[i+1:] {
+			if cnt+cnt2 == target {
+				return []int{i, i + 1 + j}
+			}
+		}
+	}
+	return nil
+}
+
+// 哈希表查表
+func twoSum2(nums []int, target int) []int {
 	hashTable := map[int]int{}
 	for i, x := range nums {
 		if p, ok := hashTable[target-x]; ok {
@@ -212,7 +225,7 @@ func main() {
 	fmt.Println(merge([][]int{{1, 4}, {4, 5}}))                    // [[1 5]]
 
 	fmt.Println("-------------8. 两数之和------------------")
-	fmt.Println(twoSum([]int{2, 7, 11, 15}, 9)) // [0 1]
-	fmt.Println(twoSum([]int{3, 2, 4}, 6))      // [1 2]
-	fmt.Println(twoSum([]int{3, 3}, 6))         // [0 1]
+	fmt.Println(twoSum1([]int{2, 7, 11, 15}, 9)) // [0 1]
+	fmt.Println(twoSum2([]int{3, 2, 4}, 6))      // [1 2]
+	fmt.Println(twoSum2([]int{3, 3}, 6))         // [0 1]
 }
