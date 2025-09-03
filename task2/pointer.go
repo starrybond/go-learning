@@ -21,6 +21,9 @@ func doubleSlice(nums *[]int) {
 	if nums == nil {
 		return
 	}
+	//for i := 0; i < len(*nums); i++ {
+	//	(*nums)[i] *= 2
+	//}
 	for i := range *nums {
 		(*nums)[i] *= 2
 	}

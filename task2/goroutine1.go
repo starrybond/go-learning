@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"sync"
+	"time"
 )
 
 /*
@@ -18,7 +20,9 @@ func main() {
 		defer wg.Done()
 		for i := 1; i <= 10; i += 2 {
 			fmt.Printf("奇数: %d\n", i)
+			time.Sleep(time.Millisecond * time.Duration(rand.Intn(100)))
 		}
+
 	}()
 
 	// 打印偶数的协程
@@ -26,6 +30,7 @@ func main() {
 		defer wg.Done()
 		for i := 2; i <= 10; i += 2 {
 			fmt.Printf("偶数: %d\n", i)
+			time.Sleep(time.Millisecond * time.Duration(rand.Intn(100)))
 		}
 	}()
 
