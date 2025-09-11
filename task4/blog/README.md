@@ -1,4 +1,4 @@
-# 📚 Blog-Gin 个人博客后端（中文文档）
+# 📚 Blog-Gin 个人博客后端
 
 > 一个简洁、RESTful 风格的个人博客后端，使用 **Go + Gin + GORM + JWT + Zap** 实现。  
 > 克隆即可运行，快速二次开发！
